@@ -1,0 +1,314 @@
+/* Serena Hotel Kampala
+   External stylesheet: all page layout and visual styling are defined here. */
+
+:root {
+    --burgundy: #800020;
+    --gold: #C9A84C;
+    --ivory: #FFFFF0;
+    --dark: #292323;
+    --muted: #6d6262;
+    --green: #16833b;
+    --red: #c62828;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--dark);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+/* Sticky navbar remains visible while visitors scroll through the page. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--burgundy);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.navbar {
+    min-height: 76px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand img {
+    display: block;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--gold);
+}
+
+/* The background photo fills the hero area; the overlay improves text contrast. */
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 24px;
+    text-align: center;
+    color: var(--ivory);
+    background:
+        linear-gradient(rgba(30, 10, 16, 0.48), rgba(30, 10, 16, 0.62)),
+        url("hero-serena.jpg") center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0 auto 28px;
+    font-size: clamp(2.3rem, 5vw, 4.3rem);
+    line-height: 1.12;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 30px;
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    background: var(--gold);
+    color: #24130f;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: transparent;
+    color: var(--ivory);
+}
+
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 76px 24px;
+}
+
+.section-heading {
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+.section-heading h2,
+.booking-anchor h2 {
+    margin: 0 0 10px;
+    color: var(--burgundy);
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+}
+
+.section-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Flexbox creates two room cards per row on desktop-sized screens. */
+.room-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.room-card {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 260px;
+    min-height: 190px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid rgba(128, 0, 32, 0.18);
+    border-top: 4px solid var(--gold);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(48, 24, 24, 0.08);
+}
+
+.room-card-content {
+    padding: 25px;
+}
+
+.room-card h3 {
+    margin: 0 0 8px;
+    color: var(--burgundy);
+    font-size: 1.45rem;
+}
+
+.room-card p {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+.room-card .room-price {
+    color: var(--burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.room-price span {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.comparison-section {
+    max-width: none;
+    background: #f7f0df;
+}
+
+.comparison-section .section-heading,
+.table-wrapper {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 18px rgba(48, 24, 24, 0.08);
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background: #fff;
+    text-align: center;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 16px 14px;
+    border: 1px solid #e3d8c9;
+}
+
+.comparison-table thead th {
+    background: var(--burgundy);
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.comparison-table tbody th {
+    color: var(--burgundy);
+    text-align: left;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: #fffaf0;
+}
+
+/* CSS classes colour-code the availability symbols as required. */
+.yes {
+    color: var(--green);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.no {
+    color: var(--red);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.booking-anchor {
+    padding: 65px 24px;
+    background: var(--burgundy);
+    color: var(--ivory);
+    text-align: center;
+    scroll-margin-top: 76px;
+}
+
+.booking-anchor h2 {
+    color: var(--gold);
+}
+
+.booking-anchor p {
+    margin-bottom: 0;
+}
+
+.site-footer {
+    padding: 20px;
+    background: #241018;
+    color: var(--ivory);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* On smaller screens, navigation wraps and room cards stack vertically. */
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .room-card {
+        flex-basis: 100%;
+    }
+
+    .section {
+        padding: 55px 18px;
+    }
+}
